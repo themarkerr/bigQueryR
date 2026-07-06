@@ -142,8 +142,8 @@ bqr_get_job <- function(jobId = .Last.value,
   check_bq_auth()
   
   if(is.job(jobId)){
-    jobId <- jobId$jobReference$jobId
     location <- jobId$jobReference$location
+    jobId <- jobId$jobReference$jobId
   }
   stopifnot(inherits(projectId, "character"),
             inherits(jobId, "character"))
